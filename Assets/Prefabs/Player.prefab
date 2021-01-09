@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5069583566592569145}
+  handReach: 5
 --- !u!95 &5069583566592569145
 Animator:
   serializedVersion: 3
@@ -287,6 +288,11 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2844458138073652726, guid: a6228b1f9db3442409926fe6c5e220d7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d75ed0b9f1c86f74cbe3c5589dc9432d, type: 2}
     - target: {fileID: 3977425346693080729, guid: a6228b1f9db3442409926fe6c5e220d7,
         type: 3}
       propertyPath: m_RootOrder

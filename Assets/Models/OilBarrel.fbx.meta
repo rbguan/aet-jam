@@ -3,7 +3,17 @@ guid: 1f330ac413cf4ff4280e2f40185d635a
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blue Barrel
+    second: {fileID: 2100000, guid: 10b9844a0a9cc134da87325c5cf2ca3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cap
+    second: {fileID: 2100000, guid: b72821814a7183d418034097ec2a22e5, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

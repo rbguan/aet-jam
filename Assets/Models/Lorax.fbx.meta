@@ -3,7 +3,27 @@ guid: bd9d9d63a05832f4197b2d81d8dddc8e
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blenda-LASHES
+    second: {fileID: 2100000, guid: 649d5ce6ac125254185804933377e7fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blenda-SCLERA
+    second: {fileID: 2100000, guid: e19c4b3e22ac10f4fbf64986925a5724, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orange.001
+    second: {fileID: 2100000, guid: f7bfe9a29be381a4abac3aab66e3252c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow
+    second: {fileID: 2100000, guid: 579bbe90ce34abc4fa8d072fcba0a520, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
