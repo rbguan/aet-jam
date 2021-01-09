@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/PaperDialogScene.unity
+    guid: ea3fd8c0a31706144b704050871dc27c
+  - enabled: 1
+    path: Assets/Scenes/PaperScene.unity
+    guid: 9a621aa491de77145b8bc0f96a2052c8
+  - enabled: 1
     path: Assets/Scenes/TreeDialogScene.unity
     guid: 32d545dfe531fe1498c44f2e7dd12e27
   - enabled: 1
