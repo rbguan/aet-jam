@@ -1,0 +1,3 @@
+label start:
+	say "put these barrels in the ocean cuz they like swimming"
+	say "punk"
