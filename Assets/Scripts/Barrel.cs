@@ -29,12 +29,7 @@ public class Barrel : InteractableObject
     }
 
     void FixedUpdate() {
-        if(!interacted && !resetting){
-            if(Vector3.Distance(transform.position, initialPos) > returnDistance){
-                StartCoroutine("ResetBarrel");
-            }
-        }
-        if(interacted && !resetting){
+        if(!resetting){
             if(transform.position.y < oceanY){
                 StartCoroutine("ResetBarrel");
             }
