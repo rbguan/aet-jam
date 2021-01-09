@@ -1,0 +1,11 @@
+label start:
+	say "Wow! You handled that task like a champ. I knew you were a pro!"
+	say "In fact, you finished up the paperwork so quickly that we've run out of paper to use for the rest of the day!"
+	say "As you know, our company revolves around paper consumption,"
+	say "so we are gonna have to do something, and do it fast!"
+
+	say "Have you ever chopped down a tree before?"
+	say "It's super easy, even a dummy can figure it out pretty quickly, haha!"
+	say "I remember someone mentioned that these trees are super rare and on the verge of extinction,"
+	say "but who cares, amarite?"
+	say "But seriously, we are pressed for time, so get rid of those useless trees A.S.A.P.! No time to take breaks."
