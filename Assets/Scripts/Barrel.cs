@@ -28,9 +28,12 @@ public class Barrel : InteractableObject
         oceanY = oceanTransform.position.y;
     }
 
-    void FixedUpdate() {
-        if(!resetting){
-            if(transform.position.y < oceanY){
+    void FixedUpdate() 
+    {
+        if(!resetting)
+        {
+            if(transform.position.y < oceanY)
+            {
                 StartCoroutine("ResetBarrel");
             }
         }
@@ -44,7 +47,8 @@ public class Barrel : InteractableObject
         //StartCoroutine("ResetBarrel");
     }
 
-    IEnumerator ResetBarrel(){
+    IEnumerator ResetBarrel()
+    {
         resetting = true;
         yield return new WaitForSeconds(resetTime);
         rb.velocity = Vector3.zero;

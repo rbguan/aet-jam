@@ -27,21 +27,35 @@ public class Boat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position != wayPoints[currentWayPoint].position){
+        if (transform.position != wayPoints[currentWayPoint].position)
+        {
             int lastWayPoint = (currentWayPoint + wayPoints.Count - 1) % wayPoints.Count;
+            Vector3 something = (wayPoints[currentWayPoint].position - transform.position).normalized * (boatSpeed * Time.deltaTime);
             Vector3 pos = Vector3.MoveTowards(transform.position, wayPoints[currentWayPoint].position, boatSpeed * Time.deltaTime);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, wayPoints[lastWayPoint].rotation, turnSpeed * Time.deltaTime);
-            rb.MovePosition(pos);
-        } else currentWayPoint = (currentWayPoint + 1) % wayPoints.Count;
+            if(Vector3.Distance(transform.position, wayPoints[currentWayPoint].position) < something.magnitude)
+            {
+                transform.position = wayPoints[currentWayPoint].position;
+            } 
+            else
+            {
+                transform.position += something;
+            }
+            //rb.MovePosition(pos);
+        } 
+        else 
+        {
+            currentWayPoint = (currentWayPoint + 1) % wayPoints.Count;
+        }
     }
 
-    void OnCollisionEnter(Collision other) {
-        foreach(Rigidbody r in rigidbodies){
-            
+    void OnCollisionEnter(Collision other) 
+    {
+        foreach(Rigidbody r in rigidbodies)
+        {
             r.isKinematic = false;
             r.useGravity = true;
             r.AddExplosionForce(explosionForce * Random.Range(1, 5), transform.position + Random.insideUnitSphere * explosionRadius, explosionRadius,upwardsModifier);
-
         }
         CapsuleCollider cc = GetComponent<CapsuleCollider>();
         BoxCollider bc = GetComponent<BoxCollider>();

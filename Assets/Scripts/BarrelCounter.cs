@@ -13,9 +13,11 @@ public class BarrelCounter : MonoBehaviour
         counter.text = "Oil Barrels Yeeted: " + numBarrels;
     }
 
-    void OnTriggerEnter(Collider other){
+    void OnTriggerEnter(Collider other)
+    {
         Barrel b = other.GetComponent<Barrel>();
-        if(b){
+        if(b)
+        {
             numBarrels++;
             counter.text = "Oil Barrels Yeeted: " + numBarrels;
         }

@@ -21,11 +21,10 @@ public class CharacterLook : MonoBehaviour
     {
         myMouseX = Input.GetAxis("Mouse X") * sensitivity;
         myMouseY = Input.GetAxis("Mouse Y") * sensitivity;
-        
-        
     }
 
-    void FixedUpdate() {
+    void FixedUpdate() 
+    {
         verticalRotation -= myMouseY;
         verticalRotation = Mathf.Clamp(verticalRotation, -90f, 90f);
 
