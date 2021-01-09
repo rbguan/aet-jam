@@ -20,7 +20,7 @@ public class Hand : MonoBehaviour
     {
         InteractableObject interObj = other.gameObject.GetComponent<InteractableObject>();
         if (interObj) { 
-            interObj.DoAction(transform.parent.transform.parent.transform.position);
+            interObj.DoAction(transform.root.position);
         }
     }
 }
