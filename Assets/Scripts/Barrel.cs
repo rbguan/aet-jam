@@ -15,6 +15,8 @@ public class Barrel : InteractableObject
     public float resetTime;
     private Vector3 initialPos;
     private Quaternion initialRot;
+    bool interacted = false;
+    bool resetting = false;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -22,8 +24,14 @@ public class Barrel : InteractableObject
         initialRot = transform.rotation;
     }
 
+    void FixedUpdate() {
+        if(!interacted && !resetting){
+
+        }
+    }
     public override void DoAction(Vector3 playerPos)
     {
+        interacted = true;
         base.DoAction(playerPos);
         Debug.Log("With Barrel");
         rb.AddExplosionForce(explosionForce, Vector3.Lerp(playerPos, transform.position, explosionLerpDistance), explosionRadius,upwardsModifier);
@@ -31,10 +39,12 @@ public class Barrel : InteractableObject
     }
 
     IEnumerator ResetBarrel(){
+        resetting = true;
         yield return new WaitForSeconds(resetTime);
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         transform.rotation = initialRot;
         transform.position = initialPos;
+        interacted = false;
     }
 }
