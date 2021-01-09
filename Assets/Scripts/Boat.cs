@@ -31,8 +31,9 @@ public class Boat : MonoBehaviour
         {
             int lastWayPoint = (currentWayPoint + wayPoints.Count - 1) % wayPoints.Count;
             Vector3 something = (wayPoints[currentWayPoint].position - transform.position).normalized * (boatSpeed * Time.deltaTime);
-            Vector3 pos = Vector3.MoveTowards(transform.position, wayPoints[currentWayPoint].position, boatSpeed * Time.deltaTime);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, wayPoints[lastWayPoint].rotation, turnSpeed * Time.deltaTime);
+            // Vector3 pos = Vector3.MoveTowards(transform.position, wayPoints[currentWayPoint].position, boatSpeed * Time.deltaTime);
+            Quaternion directionToGo = Quaternion.LookRotation(wayPoints[currentWayPoint].position - transform.position, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, directionToGo, turnSpeed * Time.deltaTime);
             if(Vector3.Distance(transform.position, wayPoints[currentWayPoint].position) < something.magnitude)
             {
                 transform.position = wayPoints[currentWayPoint].position;
