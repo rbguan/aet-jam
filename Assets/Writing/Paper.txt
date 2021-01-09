@@ -1,0 +1,8 @@
+label start:
+	say "Hey there! Did they help you get set up with all the databases and whatnot?"
+	say "Great! I can tell you one thing; this is going to be the greatest \"first day\" of your life!"
+	say "We got a lot of great stuff scheduled for you today.  Let's go ahead and get started!"
+
+	say "So, for the first thing we are going to do today is file some paperwork."
+	say "It's pretty self explanatory and I know you have had plenty of experience in this sort of thing!"
+	say "I have full faith that you can get it done quickly. When you're done, let me know and I'll look it over, okay?"

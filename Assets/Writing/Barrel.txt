@@ -1,3 +1,10 @@
 label start:
-	say "put these barrels in the ocean cuz they like swimming"
-	say "punk"
+	say "Huh, I thought you said you took care of things in a timely manner."
+	say "You know, if you can't handle it we have a whole pool of applicants that can take your place."
+	say "Whatever, now it's time for today's final task."
+
+	say "See these giant barrels of oil? They're huge! Hundreds of pounds each AT LEAST. They're unsightly and ugly."
+	say "We don't want to be seen as an ugly company, do we? It's bad enough having workers that look like you."
+	say "Dump them into the nearest ocean."
+	say "I don't care about coral reefs, I literally do not care about the environmental impact as long as my check is phat."
+	say "Now, scram!"

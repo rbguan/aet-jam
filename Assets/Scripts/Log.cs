@@ -9,7 +9,7 @@ public class Log : InteractableObject
     public int damageAmt;
     private int health;
     public int paperCount;
-    public Text paperText;
+    public PaperCounter counter;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +33,7 @@ public class Log : InteractableObject
 
     public void BreakLog()
     {
+        counter.AddToCounter(paperCount);
         Destroy(gameObject);
-        paperText.text = (int.Parse(paperText.text) + paperCount).ToString();
     }
 }

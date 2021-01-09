@@ -19,7 +19,8 @@ public class Hand : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         InteractableObject interObj = other.gameObject.GetComponent<InteractableObject>();
-        if (interObj) { 
+        if (interObj) 
+        { 
             interObj.DoAction(transform.root.position);
         }
     }
