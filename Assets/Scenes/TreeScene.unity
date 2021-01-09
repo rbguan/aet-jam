@@ -188,7 +188,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4286241788682141336, guid: 23910e679d7cc6c4aa4104d41efcdf67,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4286241788682141336, guid: 23910e679d7cc6c4aa4104d41efcdf67,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 1.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 4286241788682141336, guid: 23910e679d7cc6c4aa4104d41efcdf67,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: -3.31
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4286241788682141336, guid: 23910e679d7cc6c4aa4104d41efcdf67, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 23910e679d7cc6c4aa4104d41efcdf67, type: 3}
 --- !u!1 &147099666
 GameObject:
