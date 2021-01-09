@@ -23,4 +23,9 @@ public class Hand : MonoBehaviour
             interObj.DoAction(transform.root.position);
         }
     }
+
+    private void TryToInteract()
+    {
+        transform.parent.GetComponent<CharacterInteract>().TryToInteract();
+    }
 }

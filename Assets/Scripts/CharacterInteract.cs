@@ -9,7 +9,7 @@ public class CharacterInteract : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -24,14 +24,13 @@ public class CharacterInteract : MonoBehaviour
         }
     }
 
-//     void TryToInteract() {
-//         animator.SetBool("isSlapping", true);
-//         RaycastHit hit;
-//         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity)){
-//             InteractableObject objectHit = hit.transform.GetComponent<InteractableObject>();
-//             if(objectHit){
-//                 objectHit.DoAction(transform.position);
-//             }
-//         }
-//     }
+    public void TryToInteract() {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity)){
+            InteractableObject objectHit = hit.transform.GetComponent<InteractableObject>();
+            if(objectHit){
+                objectHit.DoAction(transform.position);
+            }
+        }
+    }
 }
