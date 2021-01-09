@@ -13,20 +13,25 @@ public class Barrel : InteractableObject
     [Range(0,1)]
     public float explosionLerpDistance;
     public float resetTime;
+    public Transform oceanTransform;
+    public float returnDistance;
     private Vector3 initialPos;
     private Quaternion initialRot;
-    bool interacted = false;
-    bool resetting = false;
+    private bool interacted = false;
+    private bool resetting = false;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         initialPos = transform.position;
         initialRot = transform.rotation;
+        // oceanY = oceanTransform.position.y;
     }
 
     void FixedUpdate() {
         if(!interacted && !resetting){
-
+            if(Vector3.Distance(transform.position, initialPos) > returnDistance){
+                StartCoroutine("ResetBarrel");
+            }
         }
     }
     public override void DoAction(Vector3 playerPos)
@@ -46,5 +51,6 @@ public class Barrel : InteractableObject
         transform.rotation = initialRot;
         transform.position = initialPos;
         interacted = false;
+        resetting = false;
     }
 }
