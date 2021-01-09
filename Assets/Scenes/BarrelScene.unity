@@ -121,28 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &20445101 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6221521590751916268, guid: a48a2ae74d0383d43959e64fe6f322e0,
-    type: 3}
-  m_PrefabInstance: {fileID: 977971071}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &20445103
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 20445101}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &30006251 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3846662081570564375, guid: ea7a58b55b6125748b20f137738e8d8f,
@@ -298,56 +276,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87b2593faaeccd948bfc816bc5c41b0b, type: 3}
---- !u!1 &323861169 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8517434946904823514, guid: a48a2ae74d0383d43959e64fe6f322e0,
-    type: 3}
-  m_PrefabInstance: {fileID: 977971071}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &323861171
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 323861169}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &404822504 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 730787357808444433, guid: 187ab4eca06827546bbff0f734451fb0,
     type: 3}
   m_PrefabInstance: {fileID: 730787358213266937}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &523897195 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5377809256946601942, guid: a48a2ae74d0383d43959e64fe6f322e0,
-    type: 3}
-  m_PrefabInstance: {fileID: 977971071}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &523897197
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 523897195}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &660950284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -445,28 +379,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 730787358213266937}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &815143219 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1527078911507746208, guid: a48a2ae74d0383d43959e64fe6f322e0,
-    type: 3}
-  m_PrefabInstance: {fileID: 8860102350680035570}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &815143220
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815143219}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &854922568
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,36 +547,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sailboat (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
-        type: 3}
-      propertyPath: boatSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
-        type: 3}
-      propertyPath: turnSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
-        type: 3}
-      propertyPath: explosionForce
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
-        type: 3}
-      propertyPath: explosionRadius
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
-        type: 3}
-      propertyPath: upwardsModifier
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
-        type: 3}
-      propertyPath: wayPoints.Array.size
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
         type: 3}
@@ -987,11 +869,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sailboat (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
-        type: 3}
-      propertyPath: boatSpeed
-      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
         type: 3}
@@ -1391,11 +1268,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
         type: 3}
-      propertyPath: boatSpeed
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
-        type: 3}
       propertyPath: turnSpeed
       value: 20
       objectReference: {fileID: 0}
@@ -1702,28 +1574,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112433855}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &2112685441 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1527078911507746208, guid: a48a2ae74d0383d43959e64fe6f322e0,
-    type: 3}
-  m_PrefabInstance: {fileID: 977971071}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &2112685442
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2112685441}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &2125284181 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6221521590751916268, guid: a48a2ae74d0383d43959e64fe6f322e0,
@@ -2422,11 +2272,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sailboat
       objectReference: {fileID: 0}
-    - target: {fileID: 1527078911507746208, guid: a48a2ae74d0383d43959e64fe6f322e0,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
         type: 3}
       propertyPath: wayPoints.Array.data[0]
@@ -2457,16 +2302,6 @@ PrefabInstance:
       propertyPath: wayPoints.Array.data[5]
       value: 
       objectReference: {fileID: 787955002}
-    - target: {fileID: 5377809256946601942, guid: a48a2ae74d0383d43959e64fe6f322e0,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6221521590751916268, guid: a48a2ae74d0383d43959e64fe6f322e0,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 6994403713125479784, guid: a48a2ae74d0383d43959e64fe6f322e0,
         type: 3}
       propertyPath: m_RootOrder
@@ -2521,11 +2356,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8517434946904823514, guid: a48a2ae74d0383d43959e64fe6f322e0,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a48a2ae74d0383d43959e64fe6f322e0, type: 3}
