@@ -43,6 +43,10 @@ public class Boat : MonoBehaviour
             r.AddExplosionForce(explosionForce * Random.Range(1, 5), transform.position + Random.insideUnitSphere * explosionRadius, explosionRadius,upwardsModifier);
 
         }
+        CapsuleCollider cc = GetComponent<CapsuleCollider>();
+        BoxCollider bc = GetComponent<BoxCollider>();
+        cc.enabled = false;
+        bc.enabled = false;
         // Rigidbody r = rigidbodies[0];
         //     r.isKinematic = false;
         //     r.useGravity = true;

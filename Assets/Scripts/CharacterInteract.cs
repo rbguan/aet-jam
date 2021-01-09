@@ -5,13 +5,7 @@ using UnityEngine;
 public class CharacterInteract : MonoBehaviour
 {
     public Animator animator;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
+    public float handReach = 5f;
     // Update is called once per frame
     void Update()
     {
@@ -26,7 +20,7 @@ public class CharacterInteract : MonoBehaviour
 
     public void TryToInteract() {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity)){
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, handReach)){
             InteractableObject objectHit = hit.transform.GetComponent<InteractableObject>();
             if(objectHit){
                 objectHit.DoAction(transform.position);
