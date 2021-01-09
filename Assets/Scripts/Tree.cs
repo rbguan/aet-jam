@@ -9,7 +9,7 @@ public class Tree : InteractableObject
     public int damageAmt;
     private int health;
     public GameObject logPrefab;
-    public Text paperText;
+    public PaperCounter counter;
 
     // Start is called before the first frame update
     void Start()
@@ -34,9 +34,9 @@ public class Tree : InteractableObject
     public void BreakTree()
     {
         Transform spawnPoint = transform;
-        Instantiate(logPrefab, spawnPoint.position, spawnPoint.rotation).GetComponent<Log>().paperText = paperText;
-        Instantiate(logPrefab, spawnPoint.position + transform.forward * 5.0f, spawnPoint.rotation).GetComponent<Log>().paperText = paperText;
-        Instantiate(logPrefab, spawnPoint.position + transform.forward * 10.0f, spawnPoint.rotation).GetComponent<Log>().paperText = paperText;
+        Instantiate(logPrefab, spawnPoint.position, spawnPoint.rotation).GetComponent<Log>().counter = counter;
+        Instantiate(logPrefab, spawnPoint.position + transform.forward * 5.0f, spawnPoint.rotation).GetComponent<Log>().counter = counter;
+        Instantiate(logPrefab, spawnPoint.position + transform.forward * 10.0f, spawnPoint.rotation).GetComponent<Log>().counter = counter;
         Destroy(gameObject);
     }
 }

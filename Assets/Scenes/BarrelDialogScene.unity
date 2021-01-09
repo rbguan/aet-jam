@@ -628,3 +628,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1189014268}
+  file: Assets/Writing/Barrel.txt
+  sceneName: BarrelScene

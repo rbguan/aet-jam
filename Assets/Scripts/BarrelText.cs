@@ -10,10 +10,12 @@ public class BarrelText : MonoBehaviour
 {
     private Rumor rumor;
     public Text text;
+    public string file;
+    public string sceneName;
 
     private void Awake()
     {
-        rumor = new Rumor(File.ReadAllText("Assets/Writing/Barrel.txt"));
+        rumor = new Rumor(File.ReadAllText(file));
         rumor.Scope.DefaultSpeaker = "Manager";
 
         StartCoroutine(rumor.Start());
@@ -35,7 +37,7 @@ public class BarrelText : MonoBehaviour
         }
 
         if (rumor.Finished)
-            SceneManager.LoadScene("BarrelScene");
+            SceneManager.LoadScene(sceneName);
 
         text.text = rumor.State.Dialog["Manager"];
 
