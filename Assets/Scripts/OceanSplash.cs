@@ -11,7 +11,7 @@ public class OceanSplash : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         if(other.gameObject.layer == 12 || other.gameObject.layer != 10)
         {
-            Vector3 pos = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
+            Vector3 pos = new Vector3(other.transform.position.x, transform.position.y + Random.Range(-.2f, .2f), other.transform.position.z);
             particles = Instantiate(particlesPrefab,pos, Quaternion.identity,null) as GameObject;
         }
 
