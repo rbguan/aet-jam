@@ -10,7 +10,13 @@ public class InteractableObject : MonoBehaviour
         
     }
 
-    public virtual void DoAction(Vector3 playerPos){
+    public virtual void DoAction(Vector3 playerPos)
+    {
+        Debug.Log("Interacted");
+    }
+
+    public virtual void DoAction(Transform playerTransform)
+    {
         Debug.Log("Interacted");
     }
 }
