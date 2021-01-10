@@ -185,7 +185,7 @@ PrefabInstance:
     - target: {fileID: 3789767606350450123, guid: 87b2593faaeccd948bfc816bc5c41b0b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.74
+      value: 0.97
       objectReference: {fileID: 0}
     - target: {fileID: 3789767606350450123, guid: 87b2593faaeccd948bfc816bc5c41b0b,
         type: 3}
@@ -334,7 +334,7 @@ PrefabInstance:
     - target: {fileID: 3789767606350450123, guid: 87b2593faaeccd948bfc816bc5c41b0b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.17
+      value: 0.81
       objectReference: {fileID: 0}
     - target: {fileID: 3789767606350450123, guid: 87b2593faaeccd948bfc816bc5c41b0b,
         type: 3}
@@ -544,7 +544,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 874422037}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -609,13 +609,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
         type: 3}
-      propertyPath: explosionForce
-      value: 1000
-      objectReference: {fileID: 0}
+      propertyPath: oceanTransform
+      value: 
+      objectReference: {fileID: 2046676098}
     - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
         type: 3}
-      propertyPath: explosionRadius
-      value: 1
+      propertyPath: explosionTorque
+      value: 325.06
       objectReference: {fileID: 0}
     - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
         type: 3}
@@ -856,14 +856,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
         type: 3}
-      propertyPath: explosionForce
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
-        type: 3}
-      propertyPath: explosionRadius
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: oceanTransform
+      value: 
+      objectReference: {fileID: 2046676098}
     - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
         type: 3}
       propertyPath: upwardsModifier
@@ -996,7 +991,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735424945}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1085,7 +1080,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1828407658}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1153,24 +1148,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
         type: 3}
-      propertyPath: turnSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
-        type: 3}
-      propertyPath: explosionForce
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
-        type: 3}
-      propertyPath: explosionRadius
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
-        type: 3}
-      propertyPath: upwardsModifier
-      value: 4
-      objectReference: {fileID: 0}
+      propertyPath: oceanTransform
+      value: 
+      objectReference: {fileID: 2046676098}
     - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
         type: 3}
       propertyPath: wayPoints.Array.size
@@ -1282,7 +1262,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044495241}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1322,6 +1302,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044495241}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2046676098 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7983141964331848776, guid: 75956fccb5fddfd4ba864f43f4f664ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 7983141962801583195}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2097889619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,7 +1405,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112433855}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1606,16 +1592,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 57765599271591257, guid: 23910e679d7cc6c4aa4104d41efcdf67,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d75ed0b9f1c86f74cbe3c5589dc9432d, type: 2}
-    - target: {fileID: 123872605156977614, guid: 23910e679d7cc6c4aa4104d41efcdf67,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 676093181865680064, guid: 23910e679d7cc6c4aa4104d41efcdf67,
         type: 3}
       propertyPath: m_RootOrder
@@ -1675,16 +1651,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 676093182940965897, guid: 23910e679d7cc6c4aa4104d41efcdf67,
-        type: 3}
-      propertyPath: handReach
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 676093182940965911, guid: 23910e679d7cc6c4aa4104d41efcdf67,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23910e679d7cc6c4aa4104d41efcdf67, type: 3}
@@ -1783,7 +1749,7 @@ PrefabInstance:
     - target: {fileID: 730787357808444432, guid: 187ab4eca06827546bbff0f734451fb0,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 730787357808444433, guid: 187ab4eca06827546bbff0f734451fb0,
         type: 3}
@@ -1892,7 +1858,7 @@ PrefabInstance:
     - target: {fileID: 3789767606350450123, guid: 87b2593faaeccd948bfc816bc5c41b0b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.71
+      value: 0.93
       objectReference: {fileID: 0}
     - target: {fileID: 3789767606350450123, guid: 87b2593faaeccd948bfc816bc5c41b0b,
         type: 3}
@@ -2252,6 +2218,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
+        type: 3}
+      propertyPath: oceanTransform
+      value: 
+      objectReference: {fileID: 2046676098}
     - target: {fileID: 3936531956923355132, guid: a48a2ae74d0383d43959e64fe6f322e0,
         type: 3}
       propertyPath: wayPoints.Array.data[0]

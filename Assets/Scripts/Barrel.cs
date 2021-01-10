@@ -13,8 +13,8 @@ public class Barrel : InteractableObject
     [Range(0,1)]
     public float explosionLerpDistance;
     public float resetTime;
-    public Transform oceanTransform;
     public float returnDistance;
+    public Transform oceanTransform;
     private float oceanY;
     private Vector3 initialPos;
     private Quaternion initialRot;

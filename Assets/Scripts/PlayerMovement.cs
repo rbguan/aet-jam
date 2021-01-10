@@ -35,9 +35,9 @@ public class PlayerMovement : MonoBehaviour
     {
         onGround = Physics.CheckSphere(myGroundChecker.position, myGroundCheckDist, myGroundMask);
         hittingHead = Physics.CheckSphere(myHeadChecker.position, myHeadCheckDist, myGroundMask);
-        if(onGround){
-            Debug.Log("On Ground");
-        }
+        // if(onGround){
+        //     Debug.Log("On Ground");
+        // }
         Vector3 movement = transform.right * leftRight + transform.forward * forwardBack;
         myVelocity.y += myGravity;
         if(!onGround){

@@ -8,6 +8,7 @@ public class Boat : MonoBehaviour
     public List<Transform> wayPoints;
     public float boatSpeed;
     public float turnSpeed;
+    public float explosionTorque;
     private int currentWayPoint = 0;
     Rigidbody[] rigidbodies;
     Rigidbody rb;
@@ -16,8 +17,12 @@ public class Boat : MonoBehaviour
     public float upwardsModifier;
     [Range(0,1)]
     public float explosionLerpDistance;
+    public Transform oceanTransform;
+    private float oceanY;
     void Start()
     {
+        
+        oceanY = oceanTransform.position.y - 10f;
         rb = GetComponent<Rigidbody>();
         rigidbodies = this.gameObject.GetComponentsInChildren<Rigidbody>().Where(go => go.gameObject != this.gameObject).ToArray();
         // rigidbodies = GetComponentsInChildren<Rigidbody>();
@@ -52,21 +57,52 @@ public class Boat : MonoBehaviour
 
     void OnCollisionEnter(Collision other) 
     {
-        foreach(Rigidbody r in rigidbodies)
-        {
-            r.isKinematic = false;
-            r.useGravity = true;
-            r.AddExplosionForce(explosionForce * Random.Range(1, 5), transform.position + Random.insideUnitSphere * explosionRadius, explosionRadius,upwardsModifier);
-        }
         CapsuleCollider cc = GetComponent<CapsuleCollider>();
         BoxCollider bc = GetComponent<BoxCollider>();
         cc.enabled = false;
         bc.enabled = false;
+        foreach(Rigidbody r in rigidbodies)
+        {
+            r.isKinematic = false;
+            r.useGravity = true;
+            Vector3 direction = r.transform.position - other.transform.position + Random.insideUnitSphere;
+            r.transform.parent = null;
+            r.AddTorque(Random.insideUnitSphere * explosionTorque);
+            r.AddForceAtPosition((direction.normalized + (Vector3.up * upwardsModifier) + Random.insideUnitSphere) * explosionForce, transform.position, ForceMode.Impulse);
+            r.AddForce(Vector3.down * 10, ForceMode.Acceleration);
+            StartCoroutine("goDownFaster");
+            //r.AddExplosionForce(explosionForce * Random.Range(1, 5), Vector3.Lerp(other.transform.position, r.transform.position, explosionLerpDistance)/*r.transform.position + Random.insideUnitSphere * explosionRadius*/, explosionRadius,upwardsModifier);
+        }
+        
         // Rigidbody r = rigidbodies[0];
         //     r.isKinematic = false;
         //     r.useGravity = true;
         //     r.AddExplosionForce(explosionForce, Vector3.Lerp(transform.position, r.transform.position, explosionLerpDistance), explosionRadius,upwardsModifier);
         // rb.useGravity = true;
         // rb.AddExplosionForce(explosionForce, Vector3.Lerp(other.transform.position, transform.position, explosionLerpDistance), explosionRadius,upwardsModifier);
+    }
+    
+    IEnumerator goDownFaster()
+    {
+        yield return new WaitForSeconds(1f);
+        int underTheSea = 0;
+        int numParts = rigidbodies.Length;
+        while(underTheSea <= numParts)
+        {
+            foreach(Rigidbody r in rigidbodies)
+            {
+                r.velocity+=Vector3.down * .05f;
+                if(r.transform.position.y < oceanY){
+                    Debug.Log(underTheSea);
+                    underTheSea++;
+                }
+            }
+            // foreach(Rigidbody r in rigidbodies)
+            // {
+            //     Destroy(r.transform.gameObject);
+            // }
+            yield return null;
+        }
+        Destroy(gameObject);
     }
 }
