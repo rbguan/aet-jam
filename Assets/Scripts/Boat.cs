@@ -20,10 +20,11 @@ public class Boat : MonoBehaviour
     public float explosionLerpDistance;
     public Transform oceanTransform;
     private float oceanY;
+    private bool beenHit = false;
     void Start()
     {
         
-        oceanY = oceanTransform.position.y - 10f;
+        oceanY = oceanTransform.position.y - 500f;
         rb = GetComponent<Rigidbody>();
         rigidbodies = this.gameObject.GetComponentsInChildren<Rigidbody>().Where(go => go.gameObject != this.gameObject).ToList<Rigidbody>();
         // rigidbodies = GetComponentsInChildren<Rigidbody>();
@@ -58,23 +59,28 @@ public class Boat : MonoBehaviour
 
     void OnCollisionEnter(Collision other) 
     {
-        CapsuleCollider cc = GetComponent<CapsuleCollider>();
-        BoxCollider bc = GetComponent<BoxCollider>();
-        cc.enabled = false;
-        bc.enabled = false;
-        boatCounter.anotherBoatYeeted();
-        foreach(Rigidbody r in rigidbodies)
+        if(!beenHit)
         {
-            r.isKinematic = false;
-            r.useGravity = true;
-            Vector3 direction = r.transform.position - other.transform.position + Random.insideUnitSphere;
-            r.transform.parent = null;
-            r.AddTorque(Random.insideUnitSphere * explosionTorque);
-            r.AddForceAtPosition((direction.normalized + (Vector3.up * upwardsModifier) + Random.insideUnitSphere) * explosionForce, transform.position, ForceMode.Impulse);
-            r.AddForce(Vector3.down * 10, ForceMode.Acceleration);
-            StartCoroutine("goDownFaster");
-            //r.AddExplosionForce(explosionForce * Random.Range(1, 5), Vector3.Lerp(other.transform.position, r.transform.position, explosionLerpDistance)/*r.transform.position + Random.insideUnitSphere * explosionRadius*/, explosionRadius,upwardsModifier);
+            beenHit = true;
+            CapsuleCollider cc = GetComponent<CapsuleCollider>();
+            BoxCollider bc = GetComponent<BoxCollider>();
+            cc.enabled = false;
+            bc.enabled = false;
+            boatCounter.anotherBoatYeeted();
+            foreach(Rigidbody r in rigidbodies)
+            {
+                r.isKinematic = false;
+                r.useGravity = true;
+                Vector3 direction = r.transform.position - other.transform.position + Random.insideUnitSphere;
+                r.transform.parent = null;
+                r.AddTorque(Random.insideUnitSphere * explosionTorque);
+                r.AddForceAtPosition((direction.normalized + (Vector3.up * upwardsModifier) + Random.insideUnitSphere) * explosionForce, transform.position, ForceMode.Impulse);
+                r.AddForce(Vector3.down * 10, ForceMode.Acceleration);
+                StartCoroutine("goDownFaster");
+                //r.AddExplosionForce(explosionForce * Random.Range(1, 5), Vector3.Lerp(other.transform.position, r.transform.position, explosionLerpDistance)/*r.transform.position + Random.insideUnitSphere * explosionRadius*/, explosionRadius,upwardsModifier);
+            }
         }
+        
         
         // Rigidbody r = rigidbodies[0];
         //     r.isKinematic = false;
