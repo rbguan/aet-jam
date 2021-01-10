@@ -93,12 +93,18 @@ public class Boat : MonoBehaviour
     IEnumerator goDownFaster()
     {
         yield return new WaitForSeconds(1f);
+
         int underTheSea = 0;
         int numParts = rigidbodies.Count;
+        foreach(Rigidbody r in rigidbodies)
+        {
+            r.gameObject.layer = 12;
+        }
         while(underTheSea <= numParts)
         {
             for(int i = rigidbodies.Count - 1; i >= 0; i--)
             {
+                
                 rigidbodies[i].velocity+=Vector3.down * .05f;
                 if(rigidbodies[i].transform.position.y < oceanY)
                 {
