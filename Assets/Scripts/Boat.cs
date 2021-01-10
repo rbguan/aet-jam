@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Boat : MonoBehaviour
 {
+    public BoatCounter boatCounter;
     public List<Transform> wayPoints;
     public float boatSpeed;
     public float turnSpeed;
@@ -61,6 +62,7 @@ public class Boat : MonoBehaviour
         BoxCollider bc = GetComponent<BoxCollider>();
         cc.enabled = false;
         bc.enabled = false;
+        boatCounter.anotherBoatYeeted();
         foreach(Rigidbody r in rigidbodies)
         {
             r.isKinematic = false;

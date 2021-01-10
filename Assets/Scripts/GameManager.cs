@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public List<Boat> boats;
+    public BoatCounter boatCounter;
     void Start()
     {
-        
+        foreach(Boat b in boats){
+            b.boatCounter = boatCounter;
+        }
     }
 
     // Update is called once per frame
