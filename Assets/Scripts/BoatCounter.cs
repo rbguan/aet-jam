@@ -16,6 +16,6 @@ public class BoatCounter : MonoBehaviour
     public void anotherBoatYeeted()
     {
         numDeadBoats++;
-        counter.text = "Boats Barrels Yeeted: " + numDeadBoats;
+        counter.text = "Boats Yeeted: " + numDeadBoats;
     }
 }

@@ -11,7 +11,7 @@ public class Boat : MonoBehaviour
     public float turnSpeed;
     public float explosionTorque;
     private int currentWayPoint = 0;
-    Rigidbody[] rigidbodies;
+    List<Rigidbody> rigidbodies;
     Rigidbody rb;
     public float explosionForce;
     public float explosionRadius;
@@ -25,7 +25,7 @@ public class Boat : MonoBehaviour
         
         oceanY = oceanTransform.position.y - 10f;
         rb = GetComponent<Rigidbody>();
-        rigidbodies = this.gameObject.GetComponentsInChildren<Rigidbody>().Where(go => go.gameObject != this.gameObject).ToArray();
+        rigidbodies = this.gameObject.GetComponentsInChildren<Rigidbody>().Where(go => go.gameObject != this.gameObject).ToList<Rigidbody>();
         // rigidbodies = GetComponentsInChildren<Rigidbody>();
         // rb.useGravity
     }
@@ -88,23 +88,24 @@ public class Boat : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         int underTheSea = 0;
-        int numParts = rigidbodies.Length;
+        int numParts = rigidbodies.Count;
         while(underTheSea <= numParts)
         {
             foreach(Rigidbody r in rigidbodies)
             {
                 r.velocity+=Vector3.down * .05f;
                 if(r.transform.position.y < oceanY){
-                    Debug.Log(underTheSea);
+                    rigidbodies.Remove(r);
+                    Destroy(r.transform.gameObject);
                     underTheSea++;
                 }
             }
+            // Debug.Log(rigidbodies.Length);
             // foreach(Rigidbody r in rigidbodies)
             // {
             //     Destroy(r.transform.gameObject);
             // }
             yield return null;
         }
-        Destroy(gameObject);
     }
 }
