@@ -91,20 +91,16 @@ public class Boat : MonoBehaviour
         int numParts = rigidbodies.Count;
         while(underTheSea <= numParts)
         {
-            foreach(Rigidbody r in rigidbodies)
+            for(int i = rigidbodies.Count - 1; i >= 0; i--)
             {
-                r.velocity+=Vector3.down * .05f;
-                if(r.transform.position.y < oceanY){
-                    rigidbodies.Remove(r);
-                    Destroy(r.transform.gameObject);
+                rigidbodies[i].velocity+=Vector3.down * .05f;
+                if(rigidbodies[i].transform.position.y < oceanY)
+                {
+                    Destroy(rigidbodies[i].transform.gameObject);
+                    rigidbodies.Remove(rigidbodies[i]);
                     underTheSea++;
                 }
             }
-            // Debug.Log(rigidbodies.Length);
-            // foreach(Rigidbody r in rigidbodies)
-            // {
-            //     Destroy(r.transform.gameObject);
-            // }
             yield return null;
         }
     }
