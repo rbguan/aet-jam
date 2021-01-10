@@ -31,7 +31,7 @@ public class CharacterInteract : MonoBehaviour
             stack.rb.useGravity = true;
             stack.collider.enabled = true;
             hasStack = false;
-            stack.LaunchStack(transform.position);
+            //stack.LaunchStack(transform.position);
         }
         else 
         {

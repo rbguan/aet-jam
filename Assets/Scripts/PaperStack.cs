@@ -1,16 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PaperStack : InteractableObject
 {
     public Rigidbody rb;
     public Collider collider;
-    public float explosionForce;
-    public float explosionRadius;
-    public float upwardsModifier;
-    [Range(0, 1)]
-    public float explosionLerpDistance;
+//     public float explosionForce;
+//     public float explosionRadius;
+//     public float upwardsModifier;
+//     [Range(0, 1)]
+//     public float explosionLerpDistance;
 
     // Start is called before the first frame update
     void Start()
@@ -34,9 +35,29 @@ public class PaperStack : InteractableObject
         collider.enabled = false;
     }
 
-    public void LaunchStack(Vector3 playerPos)
-    {
-        rb.AddExplosionForce(explosionForce, Vector3.Lerp(playerPos, transform.position, explosionLerpDistance), explosionRadius, upwardsModifier);
+//     public void LaunchStack(Vector3 playerPos)
+//     {
+//         rb.AddExplosionForce(explosionForce, Vector3.Lerp(playerPos, transform.position, explosionLerpDistance), explosionRadius, upwardsModifier);
+// 
+//     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Cabinet"))
+        {
+            collider.isTrigger = true;
+        }
+        else if (collision.gameObject.CompareTag("Clear"))
+        {
+            SceneManager.LoadScene("TreeDialogScene");
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Cabinet"))
+        {
+            collider.isTrigger = false;
+        }
     }
 }
