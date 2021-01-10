@@ -4541,6 +4541,11 @@ PrefabInstance:
       propertyPath: handReach
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5067355976361794049, guid: 23910e679d7cc6c4aa4104d41efcdf67,
+        type: 3}
+      propertyPath: myJumpHeight
+      value: 350
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23910e679d7cc6c4aa4104d41efcdf67, type: 3}
 --- !u!1 &1615311468

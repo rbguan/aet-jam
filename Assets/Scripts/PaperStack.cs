@@ -53,6 +53,14 @@ public class PaperStack : InteractableObject
         }
     }
 
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Clear"))
+        {
+            SceneManager.LoadScene("TreeDialogScene");
+        }
+    }
+
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Cabinet"))
