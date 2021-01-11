@@ -1155,8 +1155,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Printer
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e359837cdb973aa4a9e3fdc5c8bc14df,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e359837cdb973aa4a9e3fdc5c8bc14df, type: 3}
+--- !u!1 &245286636 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e359837cdb973aa4a9e3fdc5c8bc14df,
+    type: 3}
+  m_PrefabInstance: {fileID: 245286635}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &245286637
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245286636}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7735826243346505168, guid: e359837cdb973aa4a9e3fdc5c8bc14df, type: 3}
 --- !u!1001 &255756013
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6966,6 +6991,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Printer (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e359837cdb973aa4a9e3fdc5c8bc14df,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e359837cdb973aa4a9e3fdc5c8bc14df, type: 3}
