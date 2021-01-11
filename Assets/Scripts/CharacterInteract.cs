@@ -7,7 +7,14 @@ public class CharacterInteract : MonoBehaviour
     public Animator animator;
     public float handReach = 5f;
 
-    public bool hasStack = false;
+    public bool isPaused;
+    public bool hasStack;
+
+    private void Start()
+    {
+        isPaused = false;
+        hasStack = false;
+    }
 
     // Update is called once per frame
     void Update()
@@ -17,7 +24,7 @@ public class CharacterInteract : MonoBehaviour
             animator.SetBool("isSlapping", false);
         }
 
-        if(Input.GetButtonDown("Fire1")) 
+        if(Input.GetButtonDown("Fire1") && !isPaused) 
         {
             animator.SetBool("isSlapping", true);
         }
