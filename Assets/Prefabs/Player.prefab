@@ -145,7 +145,7 @@ MonoBehaviour:
   myGravity: -0.65
   myGroundCheckDist: 0.2
   myHeadCheckDist: 0.2
-  myAirControl: 0.191
+  myAirControl: 0.8
   myGroundChecker: {fileID: 6719102981006474092}
   myHeadChecker: {fileID: 8575921676513324611}
   myGroundMask:
@@ -267,6 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 5069583566592569145}
   handReach: 3
+  hasStack: 0
 --- !u!95 &5069583566592569145
 Animator:
   serializedVersion: 3

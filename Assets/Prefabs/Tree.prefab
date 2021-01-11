@@ -130,4 +130,7 @@ MonoBehaviour:
   damageAmt: 10
   logPrefab: {fileID: 4378391077916242770, guid: 1b233b6b4d2820743aa894faefc9ec5e,
     type: 3}
-  paperText: {fileID: 0}
+  counter: {fileID: 0}
+  treeParticle: {fileID: 4831626807704271995, guid: 005a5bdd6291d8f4ba4c11e63bd90b26,
+    type: 3}
+  playerYOffset: -0.37

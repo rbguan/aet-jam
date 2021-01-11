@@ -10,6 +10,10 @@ public class Tree : InteractableObject
     private int health;
     public GameObject logPrefab;
     public PaperCounter counter;
+    [SerializeField]
+    private GameObject treeParticle;
+    [SerializeField]
+    private float playerYOffset;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +30,10 @@ public class Tree : InteractableObject
     public override void DoAction(Vector3 playerPos)
     {
         base.DoAction(playerPos);
+        Vector3 pos = new Vector3(transform.position.x, playerPos.y + playerYOffset, transform.position.z);
+        GameObject particles = Instantiate(treeParticle, pos, Quaternion.identity) as GameObject;
+        particles.transform.LookAt(playerPos);
+        particles.GetComponent<ParticleSystem>().Play();
         health -= damageAmt;
         if (health <= 0)
             BreakTree();

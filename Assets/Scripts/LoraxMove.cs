@@ -7,20 +7,39 @@ public class LoraxMove : MonoBehaviour
     // Start is called before the first frame update
     private WaitForSeconds scaleIntervalWFS;
     private WaitForSeconds twitchIntervalWFS;
-    public float twitchDegrees;
-    public float twitchDegreesTolerance;
-    public Transform pivotPoint;
-    public float scaleInterval;
-    public float twitchInterval;
-    public float twitchIntervalTolerance;
-    public float scaleFactor;
-    public Transform player;
-    public float maxScale;
+    private WaitForSeconds quickTwitchWFS;
+    [SerializeField]
+    private float twitchDegrees;
+    [SerializeField]
+    private float twitchDegreesTolerance;
+    [SerializeField]
+    private Transform pivotPoint;
+    [SerializeField]
+    private float scaleInterval;
+    [SerializeField]
+    private float twitchInterval;
+    [SerializeField]
+    private float twitchIntervalTolerance;
+    [SerializeField]
+    private float scaleFactor;
+    [SerializeField]
+    private float quickTwitchTime;
+    [SerializeField]
+    private float loraxYPosSubtract;
+    [SerializeField]
+    private Transform player;
+    [SerializeField]
+    private float maxScale;
+    [SerializeField][Range(0,1)]
+    private float minLerp;
+    [SerializeField][Range(0,1)]
+    private float maxLerp;
     private Quaternion initialRotation;
     private Vector3 initialPosition;
     void Start()
     {
         scaleIntervalWFS = new WaitForSeconds(scaleInterval);
+        quickTwitchWFS = new WaitForSeconds(quickTwitchTime);
         StartCoroutine("ScaleUp");
         StartCoroutine("Twitch");
         StartCoroutine("Teleport");
@@ -48,11 +67,11 @@ public class LoraxMove : MonoBehaviour
         {
             yield return new WaitForSeconds(twitchInterval + Random.Range(-twitchIntervalTolerance, twitchIntervalTolerance));
             transform.RotateAround(pivotPoint.position,pivotPoint.forward, twitchDegrees + Random.Range(-twitchDegreesTolerance, twitchDegreesTolerance));
-            yield return new WaitForSeconds(.03f);
+            yield return quickTwitchWFS;
             transform.RotateAround(pivotPoint.position,pivotPoint.forward, twitchDegrees + Random.Range(-twitchDegreesTolerance, twitchDegreesTolerance));
-            yield return new WaitForSeconds(.03f);
+            yield return quickTwitchWFS;
             transform.RotateAround(pivotPoint.position,pivotPoint.forward, twitchDegrees + Random.Range(-twitchDegreesTolerance, twitchDegreesTolerance));
-            yield return new WaitForSeconds(.03f);
+            yield return quickTwitchWFS;
             transform.rotation = initialRotation;
             transform.position = initialPosition;
         }
@@ -63,9 +82,9 @@ public class LoraxMove : MonoBehaviour
         for(;;)
         {
             yield return new WaitForSeconds(twitchInterval + Random.Range(-twitchIntervalTolerance, twitchIntervalTolerance));
-            float lerpRand = Random.Range(.7f,.85f);
-            transform.position = Vector3.Lerp(player.position + (Vector3.down * 40), transform.position, lerpRand);
-            yield return new WaitForSeconds(.03f);
+            float lerpRand = Random.Range(minLerp,maxLerp);
+            transform.position = Vector3.Lerp(player.position + (Vector3.down * loraxYPosSubtract), transform.position, lerpRand);
+            yield return quickTwitchWFS;
             transform.position = initialPosition;
             yield return null;
         }
