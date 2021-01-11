@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2527d6d6ba084b04f8376ad9f624c0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 15
+  maxHealth: 5
   damageAmt: 5
   paperCount: 10
   counter: {fileID: 0}
