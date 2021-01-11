@@ -5624,6 +5624,21 @@ PrefabInstance:
       propertyPath: myJumpHeight
       value: 350
       objectReference: {fileID: 0}
+    - target: {fileID: 6802386758107301273, guid: 23910e679d7cc6c4aa4104d41efcdf67,
+        type: 3}
+      propertyPath: m_Height
+      value: 3.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802386758107301273, guid: 23910e679d7cc6c4aa4104d41efcdf67,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802386758107301273, guid: 23910e679d7cc6c4aa4104d41efcdf67,
+        type: 3}
+      propertyPath: m_StepOffset
+      value: 2.39
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23910e679d7cc6c4aa4104d41efcdf67, type: 3}
 --- !u!114 &1531816799 stripped
