@@ -21,12 +21,15 @@ public class Boat : MonoBehaviour
     public Transform oceanTransform;
     private float oceanY;
     private bool beenHit = false;
+    AudioSource source;
+
     void Start()
     {
         
         oceanY = oceanTransform.position.y - 500f;
         rb = GetComponent<Rigidbody>();
         rigidbodies = this.gameObject.GetComponentsInChildren<Rigidbody>().Where(go => go.gameObject != this.gameObject).ToList<Rigidbody>();
+        source = GetComponent<AudioSource>();
         // rigidbodies = GetComponentsInChildren<Rigidbody>();
         // rb.useGravity
     }
@@ -67,6 +70,7 @@ public class Boat : MonoBehaviour
             cc.enabled = false;
             bc.enabled = false;
             boatCounter.anotherBoatYeeted();
+            source.Play();
             foreach(Rigidbody r in rigidbodies)
             {
                 r.isKinematic = false;

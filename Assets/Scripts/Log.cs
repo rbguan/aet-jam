@@ -14,11 +14,13 @@ public class Log : InteractableObject
     private GameObject treeParticle;
     [SerializeField]
     private float playerYOffset;
+    private AudioSource source;
 
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -35,6 +37,7 @@ public class Log : InteractableObject
         GameObject particles = Instantiate(treeParticle, hitPoint, Quaternion.identity) as GameObject;
         particles.transform.LookAt(playerPos);
         particles.GetComponent<ParticleSystem>().Play();
+        source.Play();
         health -= damageAmt;
         if (health <= 0)
             BreakLog(); 
@@ -43,6 +46,13 @@ public class Log : InteractableObject
     public void BreakLog()
     {
         counter.AddToCounter(paperCount);
+        StartCoroutine(WaitForLogSound());
+    }
+
+    private IEnumerator WaitForLogSound()
+    {
+        GetComponent<MeshRenderer>().enabled = false;
+        yield return new WaitForSeconds(source.clip.length);
         Destroy(gameObject);
     }
 }

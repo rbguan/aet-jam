@@ -7,6 +7,7 @@ public class Barrel : InteractableObject
 {
     // Start is called before the first frame update
     Rigidbody rb;
+    AudioSource source;
     public float explosionForce;
     public float explosionRadius;
     public float upwardsModifier;
@@ -23,6 +24,7 @@ public class Barrel : InteractableObject
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        source = GetComponent<AudioSource>();
         initialPos = transform.position;
         initialRot = transform.rotation;
         oceanY = oceanTransform.position.y;
@@ -44,6 +46,7 @@ public class Barrel : InteractableObject
         base.DoAction(playerTransform, hitPoint);
         Vector3 playerPos = playerTransform.position;
         Debug.Log("With Barrel");
+        source.Play();
         rb.AddExplosionForce(explosionForce, Vector3.Lerp(playerPos, transform.position, explosionLerpDistance), explosionRadius,upwardsModifier);
         //StartCoroutine("ResetBarrel");
     }

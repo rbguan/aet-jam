@@ -14,11 +14,13 @@ public class Tree : InteractableObject
     private GameObject treeParticle;
     [SerializeField]
     private float playerYOffset;
+    private AudioSource source;
 
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,6 +36,8 @@ public class Tree : InteractableObject
         GameObject particles = Instantiate(treeParticle, hitPoint, Quaternion.identity) as GameObject;
         particles.transform.LookAt(playerPos);
         particles.GetComponent<ParticleSystem>().Play();
+        source.Stop();
+        source.Play();
         health -= damageAmt;
         if (health <= 0)
             BreakTree();
@@ -43,8 +47,15 @@ public class Tree : InteractableObject
     {
         Transform spawnPoint = transform;
         Instantiate(logPrefab, spawnPoint.position, spawnPoint.rotation).GetComponent<Log>().counter = counter;
-        Instantiate(logPrefab, spawnPoint.position + transform.forward * 5.0f, spawnPoint.rotation).GetComponent<Log>().counter = counter;
-        Instantiate(logPrefab, spawnPoint.position + transform.forward * 10.0f, spawnPoint.rotation).GetComponent<Log>().counter = counter;
+        Instantiate(logPrefab, spawnPoint.position + transform.forward * 6.0f, spawnPoint.rotation).GetComponent<Log>().counter = counter;
+        Instantiate(logPrefab, spawnPoint.position + transform.forward * 12.0f, spawnPoint.rotation).GetComponent<Log>().counter = counter;
+        StartCoroutine(WaitForTreeSound());
+    }
+
+    private IEnumerator WaitForTreeSound()
+    {
+        GetComponent<MeshRenderer>().enabled = false;
+        yield return new WaitForSeconds(source.clip.length);
         Destroy(gameObject);
     }
 }
