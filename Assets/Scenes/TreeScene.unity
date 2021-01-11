@@ -1292,6 +1292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paperText: {fileID: 147099668}
+  paperGoal: 100
 --- !u!1001 &1399134975
 PrefabInstance:
   m_ObjectHideFlags: 0

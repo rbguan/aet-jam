@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class PaperCounter : MonoBehaviour
 {
     public Text paperText;
+    public int paperGoal;
     private int numPaper;
 
     // Start is called before the first frame update
@@ -19,7 +20,7 @@ public class PaperCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (numPaper == 150)
+        if (numPaper == paperGoal)
             SceneManager.LoadScene("BarrelDialogScene");
     }
 
