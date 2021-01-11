@@ -1804,6 +1804,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counter: {fileID: 2097889621}
+  postWinWait: 4
+  numBoatsStart: 0
 --- !u!1 &2112433855 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 730787356143842118, guid: 187ab4eca06827546bbff0f734451fb0,

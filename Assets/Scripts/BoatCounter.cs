@@ -8,6 +8,8 @@ public class BoatCounter : MonoBehaviour
 {
 
     public Text counter;
+    [SerializeField]
+    private float postWinWait;
     private int numDeadBoats = 0;
     [HideInInspector]
     public int numBoatsStart;
@@ -22,7 +24,13 @@ public class BoatCounter : MonoBehaviour
         counter.text = "Boats Left To Yeet: " + (numBoatsStart - numDeadBoats);
         if(numDeadBoats == numBoatsStart)
         {
-            SceneManager.LoadScene("OutroDialogScene");
+            StartCoroutine("BoatSceneWon");
         }
+    }
+
+    private IEnumerator BoatSceneWon()
+    {
+        yield return new WaitForSeconds(postWinWait);
+        SceneManager.LoadScene("OutroDialogScene");
     }
 }
