@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1712794581}
-  file: Assets/Writing/Tree.txt
+  file: Resources/Tree.txt
   sceneName: TreeScene
 --- !u!114 &1158628230
 MonoBehaviour:
