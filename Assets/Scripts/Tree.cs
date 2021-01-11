@@ -31,8 +31,7 @@ public class Tree : InteractableObject
     {
         base.DoAction(playerTransform, hitPoint);
         Vector3 playerPos = playerTransform.position;
-        Vector3 pos = new Vector3(transform.position.x, playerPos.y + playerYOffset, transform.position.z);
-        GameObject particles = Instantiate(treeParticle, pos, Quaternion.identity) as GameObject;
+        GameObject particles = Instantiate(treeParticle, hitPoint, Quaternion.identity) as GameObject;
         particles.transform.LookAt(playerPos);
         particles.GetComponent<ParticleSystem>().Play();
         health -= damageAmt;
