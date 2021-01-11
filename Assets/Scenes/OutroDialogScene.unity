@@ -672,7 +672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 436616286}
-  file: Assets/Writing/Outro.txt
+  file: Resources/Outro.txt
   sceneName: TitleScene
 --- !u!114 &1310008954
 MonoBehaviour:

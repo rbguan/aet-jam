@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1518343573}
-  file: Assets/Writing/Paper.txt
+  file: Resources/Paper.txt
   sceneName: PaperScene
 --- !u!114 &214309309
 MonoBehaviour:

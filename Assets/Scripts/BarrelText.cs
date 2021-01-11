@@ -15,7 +15,12 @@ public class BarrelText : MonoBehaviour
 
     private void Awake()
     {
-        rumor = new Rumor(File.ReadAllText(file));
+        //rumor = new Rumor(Resources.Load<TextAsset>(file).text);
+        string filepath = Application.dataPath + "/" + file;
+        string s1 = File.ReadAllText(filepath);
+        //TextAsset t = Resources.Load<TextAsset>(filepath);
+        //string s2 = t.ToString();
+        rumor = new Rumor(s1);
         rumor.Scope.DefaultSpeaker = "Manager";
 
         StartCoroutine(rumor.Start());
