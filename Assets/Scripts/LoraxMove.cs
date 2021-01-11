@@ -9,6 +9,12 @@ public class LoraxMove : MonoBehaviour
     private WaitForSeconds twitchIntervalWFS;
     private WaitForSeconds quickTwitchWFS;
     [SerializeField]
+    private bool doTwitch;
+    [SerializeField]
+    private bool doTeleport;
+    [SerializeField]
+    private bool doScale;
+    [SerializeField]
     private float twitchDegrees;
     [SerializeField]
     private float twitchDegreesTolerance;
@@ -40,9 +46,12 @@ public class LoraxMove : MonoBehaviour
     {
         scaleIntervalWFS = new WaitForSeconds(scaleInterval);
         quickTwitchWFS = new WaitForSeconds(quickTwitchTime);
-        StartCoroutine("ScaleUp");
-        StartCoroutine("Twitch");
-        StartCoroutine("Teleport");
+        if(doScale)
+            StartCoroutine("ScaleUp");
+        if(doTwitch)
+            StartCoroutine("Twitch");
+        if(doTeleport)    
+            StartCoroutine("Teleport");
         initialRotation = transform.rotation;
         initialPosition = transform.position;
     }

@@ -476,6 +476,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 412a89abe5a742a48b21657b4f79ff79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doTwitch: 1
+  doTeleport: 1
+  doScale: 0
   twitchDegrees: 0
   twitchDegreesTolerance: 180
   pivotPoint: {fileID: 377488934}
@@ -1218,6 +1221,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 412a89abe5a742a48b21657b4f79ff79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doTwitch: 1
+  doTeleport: 1
+  doScale: 0
   twitchDegrees: 0
   twitchDegreesTolerance: 180
   pivotPoint: {fileID: 563147046}
@@ -1370,6 +1376,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 412a89abe5a742a48b21657b4f79ff79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doTwitch: 1
+  doTeleport: 1
+  doScale: 0
   twitchDegrees: 0
   twitchDegreesTolerance: 180
   pivotPoint: {fileID: 1453182280}
