@@ -28,6 +28,7 @@ public class PauseMenu : MonoBehaviour
                 Time.timeScale = 0f;
                 panel.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 characterInteract.isPaused = true;
                 isPaused = true;
             }
@@ -42,6 +43,7 @@ public class PauseMenu : MonoBehaviour
     {
         panel.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         Time.timeScale = 1f;
         characterInteract.isPaused = false;
         isPaused = false;
