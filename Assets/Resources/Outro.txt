@@ -1,6 +1,6 @@
 label start:
 	say "Welp, your first day is officially over. Not too bad, right? Pretty straightforward?"
-	say "Great. Of course, that was only a small tast of what's to come."
+	say "Great. Of course, that was only a small taste of what's to come."
 	say "You'll figure out the rest of your responsibilities throughout the week. Now, about your pay..."
 	say "We had to make some budget cuts due to our typical managerial lifestyle, so you'll only be making about half of what we initially agreed upon. Sorry about that."
 	say "Anyways, see you tomorrow, and remember what I said: You're easily replaceable, so don't get too comfortable!"
