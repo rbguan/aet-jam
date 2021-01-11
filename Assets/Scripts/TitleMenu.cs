@@ -11,6 +11,8 @@ public class TitleMenu : MonoBehaviour
     void Start()
     {
         credits.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     // Update is called once per frame
