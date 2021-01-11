@@ -25,9 +25,9 @@ public class PaperStack : InteractableObject
         
     }
 
-    public override void DoAction(Transform playerTransform)
+    public override void DoAction(Transform playerTransform, Vector3 hitPoint)
     {
-        base.DoAction(playerTransform);
+        base.DoAction(playerTransform, hitPoint);
 
         transform.parent = playerTransform;
         playerTransform.gameObject.GetComponent<CharacterInteract>().hasStack = true;

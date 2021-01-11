@@ -27,9 +27,10 @@ public class Tree : InteractableObject
         
     }
 
-    public override void DoAction(Vector3 playerPos)
+    public override void DoAction(Transform playerTransform, Vector3 hitPoint)
     {
-        base.DoAction(playerPos);
+        base.DoAction(playerTransform, hitPoint);
+        Vector3 playerPos = playerTransform.position;
         Vector3 pos = new Vector3(transform.position.x, playerPos.y + playerYOffset, transform.position.z);
         GameObject particles = Instantiate(treeParticle, pos, Quaternion.identity) as GameObject;
         particles.transform.LookAt(playerPos);

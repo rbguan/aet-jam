@@ -41,10 +41,7 @@ public class CharacterInteract : MonoBehaviour
                 InteractableObject objectHit = hit.transform.GetComponent<InteractableObject>();
                 if(objectHit)
                 {
-                    if (objectHit is PaperStack)
-                        objectHit.DoAction(transform);
-                    else
-                        objectHit.DoAction(transform.position);
+                    objectHit.DoAction(transform, hit.point);
                 }
             }
         }

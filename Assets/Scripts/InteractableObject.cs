@@ -15,7 +15,7 @@ public class InteractableObject : MonoBehaviour
         Debug.Log("Interacted");
     }
 
-    public virtual void DoAction(Transform playerTransform)
+    public virtual void DoAction(Transform playerTransform, Vector3 hitPoint)
     {
         Debug.Log("Interacted");
     }

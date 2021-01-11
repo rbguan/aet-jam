@@ -38,10 +38,11 @@ public class Barrel : InteractableObject
             }
         }
     }
-    public override void DoAction(Vector3 playerPos)
+    public override void DoAction(Transform playerTransform, Vector3 hitPoint)
     {
         interacted = true;
-        base.DoAction(playerPos);
+        base.DoAction(playerTransform, hitPoint);
+        Vector3 playerPos = playerTransform.position;
         Debug.Log("With Barrel");
         rb.AddExplosionForce(explosionForce, Vector3.Lerp(playerPos, transform.position, explosionLerpDistance), explosionRadius,upwardsModifier);
         //StartCoroutine("ResetBarrel");
